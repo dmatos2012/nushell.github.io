@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://www.nushell.sh/zh-CN/rss.xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="https://www.nushell.sh/zh-CN/rss.xml" rel="self" type="application/rss+xml"/>
+    <title>Nushell</title>
+    <link>https://www.nushell.sh/zh-CN/</link>
+    <description>一种新型的Shell</description>
+    <language>zh-CN</language>
+    <pubDate>Sat, 25 Feb 2023 09:51:18 GMT</pubDate>
+    <lastBuildDate>Sat, 25 Feb 2023 09:51:18 GMT</lastBuildDate>
+    <generator>vuepress-plugin-feed2</generator>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+  </channel>
+</rss>

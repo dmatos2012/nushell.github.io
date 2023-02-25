@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="English">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.60">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <meta name="theme-color" content="#3eaf7c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon.png"><title>Overlays | Nushell</title><meta name="description" content="A new type of shell.">
+    <link rel="preload" href="/assets/style-9c9951ef.css" as="style"><link rel="stylesheet" href="/assets/style-9c9951ef.css">
+    <link rel="modulepreload" href="/assets/app-98f88324.js"><link rel="modulepreload" href="/assets/framework-344bb0e4.js"><link rel="modulepreload" href="/assets/overlays.html-ce06b217.js"><link rel="modulepreload" href="/assets/overlays.html-3f7ff4a3.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">Nushell</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/book/" class="router-link-active" aria-label="Book"><!--[--><!--]--> Book <!--[--><!--]--></a></div><div class="navbar-item"><a href="/commands/" class="" aria-label="Commands"><!--[--><!--]--> Commands <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Changelog"><!--[--><!--]--> Changelog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/book/overlays.html" class="router-link-active router-link-exact-active router-link-active" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/book/overlays.html" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/ja/" class="" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><div id="docsearch-container"></div></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/book/" class="router-link-active" aria-label="Book"><!--[--><!--]--> Book <!--[--><!--]--></a></div><div class="navbar-item"><a href="/commands/" class="" aria-label="Commands"><!--[--><!--]--> Commands <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Changelog"><!--[--><!--]--> Changelog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/book/overlays.html" class="router-link-active router-link-exact-active router-link-active" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/book/overlays.html" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/ja/" class="" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><a href="/book/README.md" class="sidebar-item sidebar-heading" aria-label="Introduction"><!--[--><!--]--> Introduction <!--[--><!--]--></a><!----></li><li><a href="/book/getting_started.md" class="sidebar-item sidebar-heading" aria-label="Getting Started"><!--[--><!--]--> Getting Started <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a href="/book/installation.html" class="sidebar-item" aria-label="Installing Nu"><!--[--><!--]--> Installing Nu <!--[--><!--]--></a><!----></li><li><a href="/book/default_shell.html" class="sidebar-item" aria-label="Default shell"><!--[--><!--]--> Default shell <!--[--><!--]--></a><!----></li><li><a href="/book/quick_tour.html" class="sidebar-item" aria-label="Quick Tour"><!--[--><!--]--> Quick Tour <!--[--><!--]--></a><!----></li><li><a href="/book/moving_around.html" class="sidebar-item" aria-label="Moving around your system"><!--[--><!--]--> Moving around your system <!--[--><!--]--></a><!----></li><li><a href="/book/thinking_in_nu.html" class="sidebar-item" aria-label="Thinking in Nu"><!--[--><!--]--> Thinking in Nu <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/book/nu_fundamentals.md" class="sidebar-item sidebar-heading" aria-label="Nu Fundamentals"><!--[--><!--]--> Nu Fundamentals <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a href="/book/types_of_data.html" class="sidebar-item" aria-label="Types of Data"><!--[--><!--]--> Types of Data <!--[--><!--]--></a><!----></li><li><a href="/book/loading_data.html" class="sidebar-item" aria-label="Loading data"><!--[--><!--]--> Loading data <!--[--><!--]--></a><!----></li><li><a href="/book/pipelines.html" class="sidebar-item" aria-label="Pipelines"><!--[--><!--]--> Pipelines <!--[--><!--]--></a><!----></li><li><a href="/book/working_with_strings.html" class="sidebar-item" aria-label="Working with strings"><!--[--><!--]--> Working with strings <!--[--><!--]--></a><!----></li><li><a href="/book/working_with_lists.html" class="sidebar-item" aria-label="Working with lists"><!--[--><!--]--> Working with lists <!--[--><!--]--></a><!----></li><li><a href="/book/working_with_tables.html" class="sidebar-item" aria-label="Working with tables"><!--[--><!--]--> Working with tables <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/book/programming_in_nu.md" class="sidebar-item sidebar-heading active" aria-label="Programming in Nu"><!--[--><!--]--> Programming in Nu <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a href="/book/custom_commands.html" class="sidebar-item" aria-label="Custom commands"><!--[--><!--]--> Custom commands <!--[--><!--]--></a><!----></li><li><a href="/book/aliases.html" class="sidebar-item" aria-label="Aliases"><!--[--><!--]--> Aliases <!--[--><!--]--></a><!----></li><li><a href="/book/operators.html" class="sidebar-item" aria-label="Operators"><!--[--><!--]--> Operators <!--[--><!--]--></a><!----></li><li><a href="/book/variables_and_subexpressions.html" class="sidebar-item" aria-label="Variables and Subexpressions"><!--[--><!--]--> Variables and Subexpressions <!--[--><!--]--></a><!----></li><li><a href="/book/scripts.html" class="sidebar-item" aria-label="Scripts"><!--[--><!--]--> Scripts <!--[--><!--]--></a><!----></li><li><a href="/book/modules.html" class="sidebar-item" aria-label="Modules"><!--[--><!--]--> Modules <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/book/overlays.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="Overlays"><!--[--><!--]--> Overlays <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/book/overlays.html#basics" class="router-link-active router-link-exact-active sidebar-item" aria-label="Basics"><!--[--><!--]--> Basics <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/book/overlays.html#removing-an-overlay" class="router-link-active router-link-exact-active sidebar-item" aria-label="Removing an Overlay"><!--[--><!--]--> Removing an Overlay <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/book/overlays.html#overlays-are-recordable" class="router-link-active router-link-exact-active sidebar-item" aria-label="Overlays Are Recordable"><!--[--><!--]--> Overlays Are Recordable <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/book/overlays.html#prefixed-overlays" class="router-link-active router-link-exact-active sidebar-item" aria-label="Prefixed Overlays"><!--[--><!--]--> Prefixed Overlays <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/book/overlays.html#rename-an-overlay" class="router-link-active router-link-exact-active sidebar-item" aria-label="Rename an Overlay"><!--[--><!--]--> Rename an Overlay <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/book/overlays.html#preserving-definitions" class="router-link-active router-link-exact-active sidebar-item" aria-label="Preserving Definitions"><!--[--><!--]--> Preserving Definitions <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/book/overlays.html#ordering-overlays" class="router-link-active router-link-exact-active sidebar-item" aria-label="Ordering Overlays"><!--[--><!--]--> Ordering Overlays <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/book/command_signature.html" class="sidebar-item" aria-label="Command signature"><!--[--><!--]--> Command signature <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/book/nu_as_a_shell.md" class="sidebar-item sidebar-heading" aria-label="Nu as a Shell"><!--[--><!--]--> Nu as a Shell <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a href="/book/configuration.html" class="sidebar-item" aria-label="Configuration"><!--[--><!--]--> Configuration <!--[--><!--]--></a><!----></li><li><a href="/book/environment.html" class="sidebar-item" aria-label="Environment"><!--[--><!--]--> Environment <!--[--><!--]--></a><!----></li><li><a href="/book/stdout_stderr_exit_codes.html" class="sidebar-item" aria-label="Stdout, Stderr, and Exit Codes"><!--[--><!--]--> Stdout, Stderr, and Exit Codes <!--[--><!--]--></a><!----></li><li><a href="/book/escaping.html" class="sidebar-item" aria-label="Escaping to the system"><!--[--><!--]--> Escaping to the system <!--[--><!--]--></a><!----></li><li><a href="/book/3rdpartyprompts.html" class="sidebar-item" aria-label="How to configure 3rd party prompts"><!--[--><!--]--> How to configure 3rd party prompts <!--[--><!--]--></a><!----></li><li><a href="/book/shells_in_shells.html" class="sidebar-item" aria-label="Shells in shells"><!--[--><!--]--> Shells in shells <!--[--><!--]--></a><!----></li><li><a href="/book/line_editor.html" class="sidebar-item" aria-label="Reedline, Nu&#39;s line editor"><!--[--><!--]--> Reedline, Nu&#39;s line editor <!--[--><!--]--></a><!----></li><li><a href="/book/externs.html" class="sidebar-item" aria-label="Externs"><!--[--><!--]--> Externs <!--[--><!--]--></a><!----></li><li><a href="/book/custom_completions.html" class="sidebar-item" aria-label="Custom completions"><!--[--><!--]--> Custom completions <!--[--><!--]--></a><!----></li><li><a href="/book/coloring_and_theming.html" class="sidebar-item" aria-label="Coloring and Theming in Nu"><!--[--><!--]--> Coloring and Theming in Nu <!--[--><!--]--></a><!----></li><li><a href="/book/hooks.html" class="sidebar-item" aria-label="Hooks"><!--[--><!--]--> Hooks <!--[--><!--]--></a><!----></li><li><a href="/book/background_task.html" class="sidebar-item" aria-label="Background task in Nu"><!--[--><!--]--> Background task in Nu <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/book/coming_to_nu.md" class="sidebar-item sidebar-heading" aria-label="Coming to Nu"><!--[--><!--]--> Coming to Nu <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a href="/book/coming_from_bash.html" class="sidebar-item" aria-label="Coming from Bash"><!--[--><!--]--> Coming from Bash <!--[--><!--]--></a><!----></li><li><a href="/book/coming_from_cmd.html" class="sidebar-item" aria-label="Coming from CMD.EXE"><!--[--><!--]--> Coming from CMD.EXE <!--[--><!--]--></a><!----></li><li><a href="/book/nushell_map.html" class="sidebar-item" aria-label="Nu map from other shells and domain specific languages"><!--[--><!--]--> Nu map from other shells and domain specific languages <!--[--><!--]--></a><!----></li><li><a href="/book/nushell_map_imperative.html" class="sidebar-item" aria-label="Nu map from imperative languages"><!--[--><!--]--> Nu map from imperative languages <!--[--><!--]--></a><!----></li><li><a href="/book/nushell_map_functional.html" class="sidebar-item" aria-label="Nu map from functional languages"><!--[--><!--]--> Nu map from functional languages <!--[--><!--]--></a><!----></li><li><a href="/book/nushell_operator_map.html" class="sidebar-item" aria-label="Nushell operator map"><!--[--><!--]--> Nushell operator map <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/book/design_notes.md" class="sidebar-item sidebar-heading" aria-label="Design Notes"><!--[--><!--]--> Design Notes <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a href="/book/how_nushell_code_gets_run.html" class="sidebar-item" aria-label="How Nushell Code Gets Run"><!--[--><!--]--> How Nushell Code Gets Run <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/book/advanced.md" class="sidebar-item sidebar-heading" aria-label="(Not So) Advanced"><!--[--><!--]--> (Not So) Advanced <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a href="/book/dataframes.html" class="sidebar-item" aria-label="Dataframes"><!--[--><!--]--> Dataframes <!--[--><!--]--></a><!----></li><li><a href="/book/metadata.html" class="sidebar-item" aria-label="Metadata"><!--[--><!--]--> Metadata <!--[--><!--]--></a><!----></li><li><a href="/book/creating_errors.html" class="sidebar-item" aria-label="Creating your own errors"><!--[--><!--]--> Creating your own errors <!--[--><!--]--></a><!----></li><li><a href="/book/parallelism.html" class="sidebar-item" aria-label="Parallelism"><!--[--><!--]--> Parallelism <!--[--><!--]--></a><!----></li><li><a href="/book/plugins.html" class="sidebar-item" aria-label="Plugins"><!--[--><!--]--> Plugins <!--[--><!--]--></a><!----></li><li><a href="/book/explore.html" class="sidebar-item" aria-label="explore"><!--[--><!--]--> explore <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="overlays" tabindex="-1"><a class="header-anchor" href="#overlays" aria-hidden="true">#</a> Overlays</h1><p>Overlays act as &quot;layers&quot; of definitions (custom commands, aliases, environment variables) that can be activated and deactivated on demand. They resemble virtual environments found in some languages, such as Python.</p><p><em>Note: To understand overlays, make sure to check <a href="/book/modules.html" class="">Modules</a> first as overlays build on top of modules.</em></p><h2 id="basics" tabindex="-1"><a class="header-anchor" href="#basics" aria-hidden="true">#</a> Basics</h2><p>First, Nushell comes with one default overlay called <code>zero</code>. You can inspect which overlays are active with the <a href="/commands/docs/overlay_list.html" class=""><code>overlay list</code></a> command. You should see the default overlay listed there.</p><p>To create a new overlay, you first need a module:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; module spam {
+    export def foo [] {
+        &quot;foo&quot;
+    }
+
+    export alias bar = &quot;bar&quot;
+
+    export-env {
+        load-env { BAZ: &quot;baz&quot; }
+    }
+}
+</code></pre></div><p>We&#39;ll use this module throughout the chapter, so whenever you see <code>overlay use spam</code>, assume <code>spam</code> is referring to this module.</p><p>To create the overlay, call <a href="/commands/docs/overlay_use.html" class=""><code>overlay use</code></a>:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; overlay use spam
+
+&gt; foo
+foo
+
+&gt; bar
+bar
+
+&gt; $env.BAZ
+baz
+
+&gt; overlay list
+───┬──────
+ 0 │ zero
+ 1 │ spam
+───┴──────
+</code></pre></div><p>It brought the module&#39;s definitions into the current scope and evaluated the <code>export-env</code> block the same way as <code>use</code> command would (see <a href="/book/modules.html#environment-variables" class="">Modules</a> chapter).</p><div class="custom-container tip"><p class="custom-container-title">TIP</p><p>In the following sections, the <code>&gt;</code> prompt will be preceded by the name of the last active overlay. <code>(spam)&gt; some-command</code> means the <code>spam</code> overlay is the last active overlay when the command was typed.</p></div><h2 id="removing-an-overlay" tabindex="-1"><a class="header-anchor" href="#removing-an-overlay" aria-hidden="true">#</a> Removing an Overlay</h2><p>If you don&#39;t need the overlay definitions anymore, call <a href="/commands/docs/overlay_remove.html" class=""><code>overlay hide</code></a>:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(spam)&gt; overlay hide spam
+
+(zero)&gt; foo
+Error: Can&#39;t run executable...
+
+(zero)&gt; overlay list
+───┬──────
+ 0 │ zero
+───┴──────
+</code></pre></div><p>The overlays are also scoped. Any added overlays are removed at the end of the scope:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; do { overlay use spam; foo }  # overlay is active only inside the block
+foo
+
+(zero)&gt; overlay list
+───┬──────
+ 0 │ zero
+───┴──────
+</code></pre></div><p>The last way to remove an overlay is to call <a href="/commands/docs/overlay_remove.html" class=""><code>overlay hide</code></a> without an argument which will remove the last active overlay.</p><h2 id="overlays-are-recordable" tabindex="-1"><a class="header-anchor" href="#overlays-are-recordable" aria-hidden="true">#</a> Overlays Are Recordable</h2><p>Any new definition (command, alias, environment variable) is recorded into the last active overlay:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; overlay use spam
+
+(spam)&gt; def eggs [] { &quot;eggs&quot; }
+</code></pre></div><p>Now, the <code>eggs</code> command belongs to the <code>spam</code> overlay. If we remove the overlay, we can&#39;t call it anymore:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(spam)&gt; overlay hide spam
+
+(zero)&gt; eggs
+Error: Can&#39;t run executable...
+</code></pre></div><p>But we can bring it back!</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; overlay use spam
+
+(spam)&gt; eggs
+eggs
+</code></pre></div><p>Overlays remember what you add to them and store that information even if you remove them. This can let you repeatedly swap between different contexts.</p><div class="custom-container tip"><p class="custom-container-title">TIP</p><p>Sometimes, after adding an overlay, you might not want custom definitions to be added into it. The solution can be to create a new empty overlay that would be used just for recording the custom changes:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; overlay use spam
+
+(spam)&gt; module scratchpad { }
+
+(spam)&gt; overlay new scratchpad
+
+(scratchpad)&gt; def eggs [] { &quot;eggs&quot; }
+</code></pre></div><p>The <code>eggs</code> command is added into <code>scratchpad</code> while keeping <code>spam</code> intact.</p><p>To make it less verbose, you can use the <a href="/commands/docs/overlay_new.html" class=""><code>overlay new</code></a> command:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; overlay use spam
+
+(spam)&gt; overlay new scratchpad
+
+(scratchpad)&gt; def eggs [] { &quot;eggs&quot; }
+</code></pre></div></div><h2 id="prefixed-overlays" tabindex="-1"><a class="header-anchor" href="#prefixed-overlays" aria-hidden="true">#</a> Prefixed Overlays</h2><p>The <code>overlay use</code> command would take all commands and aliases from the module and put them directly into the current namespace. However, you might want to keep them as subcommands behind the module&#39;s name. That&#39;s what <code>--prefix</code> is for:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; module spam {
+    export def foo [] { &quot;foo&quot; }
+}
+
+(zero)&gt; overlay use --prefix spam
+
+(spam)&gt; spam foo
+foo
+</code></pre></div><p>Note that this does not apply for environment variables.</p><h2 id="rename-an-overlay" tabindex="-1"><a class="header-anchor" href="#rename-an-overlay" aria-hidden="true">#</a> Rename an Overlay</h2><p>You can change the name of the added overlay with the <code>as</code> keyword:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; module spam { export def foo [] { &quot;foo&quot; } }
+
+(zero)&gt; overlay use spam as eggs
+
+(eggs)&gt; foo
+foo
+
+(eggs)&gt; overlay hide eggs
+
+(zero)&gt;
+</code></pre></div><p>This can be useful if you have a generic script name, such as virtualenv&#39;s <code>activate.nu</code> but you want a more descriptive name for your overlay.</p><h2 id="preserving-definitions" tabindex="-1"><a class="header-anchor" href="#preserving-definitions" aria-hidden="true">#</a> Preserving Definitions</h2><p>Sometimes, you might want to remove an overlay, but keep all the custom definitions you added without having to redefine them in the next active overlay:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; overlay use spam
+
+(spam)&gt; def eggs [] { &quot;eggs&quot; }
+
+(spam)&gt; overlay hide --keep-custom spam
+
+(zero)&gt; eggs
+eggs
+</code></pre></div><p>The <code>--keep-custom</code> flag does exactly that.</p><p>One can also keep a list of environment variables that were defined inside an overlay, but remove the rest, using the <code>--keep-env</code> flag:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; module spam {
+    export def foo [] { &quot;foo&quot; }
+    export-env { let-env FOO = &quot;foo&quot; }
+}
+
+(zero)&gt; overlay use spam
+
+(spam)&gt; overlay hide spam --keep-env [ FOO ]
+
+(zero)&gt; foo
+Error: Can&#39;t run executable...
+
+(zero)&gt; $env.FOO
+foo
+</code></pre></div><h2 id="ordering-overlays" tabindex="-1"><a class="header-anchor" href="#ordering-overlays" aria-hidden="true">#</a> Ordering Overlays</h2><p>The overlays are arranged as a stack. If multiple overlays contain the same definition, say <code>foo</code>, the one from the last active one would take precedence. To bring an overlay to the top of the stack, you can call <code>overlay use</code> again:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>(zero)&gt; def foo [] { &quot;foo-in-zero&quot; }
+
+(zero)&gt; overlay use spam
+
+(spam)&gt; foo
+foo
+
+(spam)&gt; overlay use zero
+
+(zero)&gt; foo
+foo-in-zero
+
+(zero)&gt; overlay list
+───┬──────
+ 0 │ spam
+ 1 │ zero
+───┴──────
+</code></pre></div><p>Now, the <code>zero</code> overlay takes precedence.</p></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/nushell/nushell.github.io/edit/main/book/overlays.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page on GitHub"><!--[--><!--]--> Edit this page on GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!----><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: kubouch@gmail.com">Jakub Žádník</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: hustcer@outlook.com">Justin Ma</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: 44101798+amtoine@users.noreply.github.com">Antoine Stevan</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: 30049909+Hofer-Julian@users.noreply.github.com">Hofer-Julian</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: tensorush@gmail.com">Zhora Trush</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/book/modules.html" class="" aria-label="Modules"><!--[--><!--]--> Modules <!--[--><!--]--></a></span><span class="next"><a href="/book/command_signature.html" class="" aria-label="Command signature"><!--[--><!--]--> Command signature <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app-98f88324.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.60">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <meta name="theme-color" content="#3eaf7c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon.png"><title>データの読み込み | Nushell</title><meta name="description" content="新しいタイプのシェル">
+    <link rel="preload" href="/assets/style-9c9951ef.css" as="style"><link rel="stylesheet" href="/assets/style-9c9951ef.css">
+    <link rel="modulepreload" href="/assets/app-98f88324.js"><link rel="modulepreload" href="/assets/framework-344bb0e4.js"><link rel="modulepreload" href="/assets/loading_data.html-0582155e.js"><link rel="modulepreload" href="/assets/loading_data.html-1a16f55f.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/ja/" class=""><!----><span class="site-name">Nushell</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/ja/book/" class="router-link-active" aria-label="本"><!--[--><!--]--> 本 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Blog"><!--[--><!--]--> Blog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a href="/book/loading_data.html" class="" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/book/loading_data.html" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/book/loading_data.html" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a aria-current="page" href="/ja/book/loading_data.html" class="router-link-active router-link-exact-active router-link-active" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><div id="docsearch-container"></div></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/ja/book/" class="router-link-active" aria-label="本"><!--[--><!--]--> 本 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Blog"><!--[--><!--]--> Blog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a href="/book/loading_data.html" class="" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/book/loading_data.html" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/book/loading_data.html" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a aria-current="page" href="/ja/book/loading_data.html" class="router-link-active router-link-exact-active router-link-active" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">Nu 本 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/ja/book/installation.html" class="sidebar-item" aria-label="Nu のインストール"><!--[--><!--]--> Nu のインストール <!--[--><!--]--></a><!----></li><li><a href="/ja/book/introduction.html" class="sidebar-item" aria-label="はじめに"><!--[--><!--]--> はじめに <!--[--><!--]--></a><!----></li><li><a href="/ja/book/moving_around.html" class="sidebar-item" aria-label="システム内の移動"><!--[--><!--]--> システム内の移動 <!--[--><!--]--></a><!----></li><li><a href="/ja/book/types_of_data.html" class="sidebar-item" aria-label="データ型"><!--[--><!--]--> データ型 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/loading_data.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="データの読み込み"><!--[--><!--]--> データの読み込み <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/ja/book/loading_data.html#ファイルを開く" class="router-link-active router-link-exact-active sidebar-item" aria-label="ファイルを開く"><!--[--><!--]--> ファイルを開く <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/loading_data.html#文字列を扱う" class="router-link-active router-link-exact-active sidebar-item" aria-label="文字列を扱う"><!--[--><!--]--> 文字列を扱う <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/loading_data.html#raw-モードで開く" class="router-link-active router-link-exact-active sidebar-item" aria-label="raw モードで開く"><!--[--><!--]--> raw モードで開く <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/loading_data.html#url-からの取得" class="router-link-active router-link-exact-active sidebar-item" aria-label="URL からの取得"><!--[--><!--]--> URL からの取得 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/ja/book/working_with_tables.html" class="sidebar-item" aria-label="テーブルを扱う"><!--[--><!--]--> テーブルを扱う <!--[--><!--]--></a><!----></li><li><a href="/ja/book/pipeline.html" class="sidebar-item" aria-label="パイプライン"><!--[--><!--]--> パイプライン <!--[--><!--]--></a><!----></li><li><a href="/ja/book/configuration.html" class="sidebar-item" aria-label="設定"><!--[--><!--]--> 設定 <!--[--><!--]--></a><!----></li><li><a href="/ja/book/metadata.html" class="sidebar-item" aria-label="メタデータ"><!--[--><!--]--> メタデータ <!--[--><!--]--></a><!----></li><li><a href="/ja/book/shells_in_shells.html" class="sidebar-item" aria-label="シェルの中のシェル"><!--[--><!--]--> シェルの中のシェル <!--[--><!--]--></a><!----></li><li><a href="/ja/book/escaping.html" class="sidebar-item" aria-label="エスケープ"><!--[--><!--]--> エスケープ <!--[--><!--]--></a><!----></li><li><a href="/ja/book/plugins.html" class="sidebar-item" aria-label="プラグイン"><!--[--><!--]--> プラグイン <!--[--><!--]--></a><!----></li><li><a href="/book/command_reference.md" class="sidebar-item" aria-label="/book/command_reference.md"><!--[--><!--]--> /book/command_reference.md <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="データの読み込み" tabindex="-1"><a class="header-anchor" href="#データの読み込み" aria-hidden="true">#</a> データの読み込み</h1><p>これまでに、<code>ls</code>、<code>ps</code>、<code>date</code>、および<code>sys</code>コマンドを使って、ファイル、プロセス、日付そしてシステム自身の情報を取得する方法をみてきました。各コマンドはテーブル情報を提供しますが、他にもデータをテーブルに読み込む方法があります。</p><h2 id="ファイルを開く" tabindex="-1"><a class="header-anchor" href="#ファイルを開く" aria-hidden="true">#</a> ファイルを開く</h2><p>データを操作するための Nu の最も強力なコマンドのひとつが<code>open</code>コマンドです。これは様々なデータ形式に対応したマルチツールです。これがなにを意味するかをみるために、json ファイルを開いてみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open editors/vscode/package.json
+──────────────────┬───────────────────────────────────────────────────────────────────────────────
+ name             │ lark
+ description      │ Lark support for VS Code
+ author           │ Lark developers
+ license          │ MIT
+ version          │ 1.0.0
+ repository       │ [row type url]
+ publisher        │ vscode
+ categories       │ [table 0 rows]
+ keywords         │ [table 1 rows]
+ engines          │ [row vscode]
+ activationEvents │ [table 1 rows]
+ main             │ ./out/extension
+ contributes      │ [row configuration grammars languages]
+ scripts          │ [row compile postinstall test vscode:prepublish watch]
+ devDependencies  │ [row @types/mocha @types/node tslint typescript vscode vscode-languageclient]
+──────────────────┴───────────────────────────────────────────────────────────────────────────────
+</code></pre></div><p><code>ls</code>と同様、Nu が理解できるタイプのファイルを開くと、単なるテキスト(またはバイトストリーム)以上のものが返ってきます。ここでは、JavaScript プロジェクト内の&quot;package.json&quot;ファイルを開いています。Nu は JSON テキストを認識し、テーブルデータを返すことができます。</p><p>プロジェクトのバージョンを確認したい場合は、<code>get</code>コマンドを利用します。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open editors/vscode/package.json | get version
+1.0.0
+</code></pre></div><p>Nu が現在、直接データをテーブルに読み込める形式は次の通りです。</p><ul><li>json</li><li>yaml</li><li>toml</li><li>xml</li><li>csv</li><li>ini</li></ul><p>しかし、これらのいずれでもないテキストファイルを読み込むとどうなるでしょうか、試してみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open README.md
+</code></pre></div><p>ファイルの内容が表示されます。ファイルが大きすぎる場合は、便利なスクロールビューでファイルの中身を確認してからターミナルに戻ってることができます。読みやすさのために、ソースファイルやマークダウンといった一般的なファイル形式ではシンタックスハイライトを提供します。</p><p>裏側では、Nu はこれらのファイルをひとつの大きな文字列としてみています。次に、これらの文字列から必要なデータを取得する方法について説明します。</p><h2 id="文字列を扱う" tabindex="-1"><a class="header-anchor" href="#文字列を扱う" aria-hidden="true">#</a> 文字列を扱う</h2><p>Nu の外からきたデータを Nu がいつも理解できるとは限らないことを理解しておくのは重要なことです。多くの場合このデータは文字列として与えられます。</p><p>以下のファイルが与えられたと想定してみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open people.txt
+Octavia | Butler | Writer
+Bob | Ross | Painter
+Antonio | Vivaldi | Composer
+</code></pre></div><p>必要なデータはパイプ(&#39;|&#39;)記号で区切られており、各行はそれぞれの人物を表しています。Nu はデフォルトではパイプで区切られたファイル形式を知らないので、明示的にこのファイルをパースする必要があります。</p><p>ファイルを読み込むときに最初に行うことは、１行ずつ作業することです。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open people.txt | lines
+───┬──────────────────────────────
+ 0 │ Octavia | Butler | Writer
+ 1 │ Bob | Ross | Painter
+ 2 │ Antonio | Vivaldi | Composer
+───┴──────────────────────────────
+</code></pre></div><p>テーブルにもどってきたので、行を使って作業していることがわかります。次のステップは、行をもうすこし便利なものに分割できるかみてみることです。そのために、<code>split</code>コマンドを利用します。名前からわかるように、<code>split</code>は区切り文字を含む文字列を列に分割する方法を提供します。<code>split</code>の<code>column</code>サブコマンドを使って、複数の列に分割するします。必要なのは区切り文字を指定することだけです。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open people.txt | lines | split column &quot;|&quot;
+───┬──────────┬───────────┬───────────
+ # │ Column1  │ Column2   │ Column3
+───┼──────────┼───────────┼───────────
+ 0 │ Octavia  │  Butler   │  Writer
+ 1 │ Bob      │  Ross     │  Painter
+ 2 │ Antonio  │  Vivaldi  │  Composer
+───┴──────────┴───────────┴───────────
+</code></pre></div><p>ほとんど正しいように見えますが、余分なスペースを含んでいます。余分なスペースを<code>trim</code>してみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open people.txt | lines | split column &quot;|&quot; | str trim
+───┬─────────┬─────────┬──────────
+ # │ Column1 │ Column2 │ Column3
+───┼─────────┼─────────┼──────────
+ 0 │ Octavia │ Butler  │ Writer
+ 1 │ Bob     │ Ross    │ Painter
+ 2 │ Antonio │ Vivaldi │ Composer
+───┴─────────┴─────────┴──────────
+</code></pre></div><p>悪くありません。<code>split</code>コマンドは利用可能なデータとデフォルトのカラム名をつけてくれます。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open people.txt | lines | split column &quot;|&quot; | str trim | get Column1
+───┬─────────
+ 0 │ Octavia
+ 1 │ Bob
+ 2 │ Antonio
+───┴─────────
+</code></pre></div><p>デフォルトの名前を利用するかわりに、列に名前をつけることもできます。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open people.txt | lines | split column &quot;|&quot; first_name last_name job | str trim
+───┬────────────┬───────────┬──────────
+ # │ first_name │ last_name │ job
+───┼────────────┼───────────┼──────────
+ 0 │ Octavia    │ Butler    │ Writer
+ 1 │ Bob        │ Ross      │ Painter
+ 2 │ Antonio    │ Vivaldi   │ Composer
+───┴────────────┴───────────┴──────────
+</code></pre></div><p>データをテーブルに変換できたので、これまでテーブルに利用してきたすべてのコマンドをつかうことができます。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open people.txt | lines | split column &quot;|&quot; first_name last_name job | str trim | sort-by first_name
+───┬────────────┬───────────┬──────────
+ # │ first_name │ last_name │ job
+───┼────────────┼───────────┼──────────
+ 0 │ Antonio    │ Vivaldi   │ Composer
+ 1 │ Bob        │ Ross      │ Painter
+ 2 │ Octavia    │ Butler    │ Writer
+───┴────────────┴───────────┴──────────
+</code></pre></div><p>文字列を操作するために使用できるその他のコマンドです。</p><ul><li>str</li><li>lines</li><li>size</li></ul><p>データが Nu が理解できる構造をもっていることがわかっている場合に呼び出すことのできるヘルパーコマンドのセットもあります。例えば、Rust のロックファイルを開いてみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open Cargo.lock
+# This file is automatically @generated by Cargo.
+# It is not intended for manual editing.
+[[package]]
+name = &quot;adhoc_derive&quot;
+version = &quot;0.1.2&quot;
+</code></pre></div><p>&quot;Cargo.lock&quot;ファイルは実際には.toml ファイルですが、ファイル拡張子が.toml ではありません。でも大丈夫です、<code>from toml</code>コマンドが使えます。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open Cargo.lock | from toml
+──────────┬───────────────────
+ metadata │ [row 107 columns]
+ package  │ [table 130 rows]
+──────────┴───────────────────
+</code></pre></div><p><code>from</code>コマンドはサポートされているテキストフォーマットをサブコマンドとして渡すことで Nu が扱える構造化データごとに利用できます。</p><h2 id="raw-モードで開く" tabindex="-1"><a class="header-anchor" href="#raw-モードで開く" aria-hidden="true">#</a> raw モードで開く</h2><p>ファイルを開いてそのデータのテーブルをすぐに操作できると便利ですが、これは必ずしもやりたいことであるとは限りません。テキストをそのまま取得するために、<code>open</code>コマンドに<code>--raw</code>オプションフラグを渡すことができます。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open Cargo.toml --raw
+[package]                                                                                        name = &quot;nu&quot;
+version = &quot;0.1.3&quot;
+authors = [&quot;Yehuda Katz &lt;wycats@gmail.com&gt;&quot;, &quot;Jonathan Turner &lt;jonathan.d.turner@gmail.com&gt;&quot;]
+description = &quot;A shell for the GitHub era&quot;
+license = &quot;MIT&quot;
+</code></pre></div><h2 id="url-からの取得" tabindex="-1"><a class="header-anchor" href="#url-からの取得" aria-hidden="true">#</a> URL からの取得</h2><p>ファイルシステムからファイルを読み込むことに加えて、<code>http get</code>コマンドを利用して URL からリソースを取得できます。 これはインターネットから URL の内容をフェッチして返してくれます。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; http get https://www.jonathanturner.org/feed.xml
+─────┬───────────────────────────
+ rss │ [row attributes children]
+─────┴───────────────────────────
+</code></pre></div></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/nushell/nushell.github.io/edit/main/ja/book/loading_data.md" rel="noopener noreferrer" target="_blank" aria-label="GitHubでこのページを編集する"><!--[--><!--]--> GitHubでこのページを編集する <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!----><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: jabos123@gmail.com">Filip Andersson</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: ibrah1440@gmail.com">Ibraheem Ahmed</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: hustcer@outlook.com">Justin Ma</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: yamaguchi7073xtt@gmail.com">ymgyt</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/ja/book/types_of_data.html" class="" aria-label="データ型"><!--[--><!--]--> データ型 <!--[--><!--]--></a></span><span class="next"><a href="/ja/book/working_with_tables.html" class="" aria-label="テーブルを扱う"><!--[--><!--]--> テーブルを扱う <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app-98f88324.js" defer></script>
+  </body>
+</html>

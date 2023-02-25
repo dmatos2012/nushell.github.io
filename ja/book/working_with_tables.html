@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.60">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <meta name="theme-color" content="#3eaf7c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon.png"><title>テーブルを扱う | Nushell</title><meta name="description" content="新しいタイプのシェル">
+    <link rel="preload" href="/assets/style-9c9951ef.css" as="style"><link rel="stylesheet" href="/assets/style-9c9951ef.css">
+    <link rel="modulepreload" href="/assets/app-98f88324.js"><link rel="modulepreload" href="/assets/framework-344bb0e4.js"><link rel="modulepreload" href="/assets/working_with_tables.html-95d92c15.js"><link rel="modulepreload" href="/assets/working_with_tables.html-602d22ad.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/ja/" class=""><!----><span class="site-name">Nushell</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/ja/book/" class="router-link-active" aria-label="本"><!--[--><!--]--> 本 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Blog"><!--[--><!--]--> Blog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a href="/book/working_with_tables.html" class="" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/book/working_with_tables.html" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/book/working_with_tables.html" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a aria-current="page" href="/ja/book/working_with_tables.html" class="router-link-active router-link-exact-active router-link-active" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><div id="docsearch-container"></div></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/ja/book/" class="router-link-active" aria-label="本"><!--[--><!--]--> 本 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Blog"><!--[--><!--]--> Blog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a href="/book/working_with_tables.html" class="" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/book/working_with_tables.html" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/book/working_with_tables.html" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a aria-current="page" href="/ja/book/working_with_tables.html" class="router-link-active router-link-exact-active router-link-active" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">Nu 本 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/ja/book/installation.html" class="sidebar-item" aria-label="Nu のインストール"><!--[--><!--]--> Nu のインストール <!--[--><!--]--></a><!----></li><li><a href="/ja/book/introduction.html" class="sidebar-item" aria-label="はじめに"><!--[--><!--]--> はじめに <!--[--><!--]--></a><!----></li><li><a href="/ja/book/moving_around.html" class="sidebar-item" aria-label="システム内の移動"><!--[--><!--]--> システム内の移動 <!--[--><!--]--></a><!----></li><li><a href="/ja/book/types_of_data.html" class="sidebar-item" aria-label="データ型"><!--[--><!--]--> データ型 <!--[--><!--]--></a><!----></li><li><a href="/ja/book/loading_data.html" class="sidebar-item" aria-label="データの読み込み"><!--[--><!--]--> データの読み込み <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/working_with_tables.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="テーブルを扱う"><!--[--><!--]--> テーブルを扱う <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/ja/book/working_with_tables.html#データのソート" class="router-link-active router-link-exact-active sidebar-item" aria-label="データのソート"><!--[--><!--]--> データのソート <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/working_with_tables.html#必要なデータを選択する" class="router-link-active router-link-exact-active sidebar-item" aria-label="必要なデータを選択する"><!--[--><!--]--> 必要なデータを選択する <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/working_with_tables.html#テーブルからデータを取得する" class="router-link-active router-link-exact-active sidebar-item" aria-label="テーブルからデータを取得する"><!--[--><!--]--> テーブルからデータを取得する <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/working_with_tables.html#テーブルのデータを変更する" class="router-link-active router-link-exact-active sidebar-item" aria-label="テーブルのデータを変更する"><!--[--><!--]--> テーブルのデータを変更する <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/ja/book/working_with_tables.html#新しい列を追加する" class="router-link-active router-link-exact-active sidebar-item" aria-label="新しい列を追加する"><!--[--><!--]--> 新しい列を追加する <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/working_with_tables.html#列を更新する" class="router-link-active router-link-exact-active sidebar-item" aria-label="列を更新する"><!--[--><!--]--> 列を更新する <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/ja/book/working_with_tables.html#値を増やす" class="router-link-active router-link-exact-active sidebar-item" aria-label="値を増やす"><!--[--><!--]--> 値を増やす <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul></li><li><a href="/ja/book/pipeline.html" class="sidebar-item" aria-label="パイプライン"><!--[--><!--]--> パイプライン <!--[--><!--]--></a><!----></li><li><a href="/ja/book/configuration.html" class="sidebar-item" aria-label="設定"><!--[--><!--]--> 設定 <!--[--><!--]--></a><!----></li><li><a href="/ja/book/metadata.html" class="sidebar-item" aria-label="メタデータ"><!--[--><!--]--> メタデータ <!--[--><!--]--></a><!----></li><li><a href="/ja/book/shells_in_shells.html" class="sidebar-item" aria-label="シェルの中のシェル"><!--[--><!--]--> シェルの中のシェル <!--[--><!--]--></a><!----></li><li><a href="/ja/book/escaping.html" class="sidebar-item" aria-label="エスケープ"><!--[--><!--]--> エスケープ <!--[--><!--]--></a><!----></li><li><a href="/ja/book/plugins.html" class="sidebar-item" aria-label="プラグイン"><!--[--><!--]--> プラグイン <!--[--><!--]--></a><!----></li><li><a href="/book/command_reference.md" class="sidebar-item" aria-label="/book/command_reference.md"><!--[--><!--]--> /book/command_reference.md <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="テーブルを扱う" tabindex="-1"><a class="header-anchor" href="#テーブルを扱う" aria-hidden="true">#</a> テーブルを扱う</h1><p>Nu でデータを表示する一般的な方法はテーブルを使用することです。Nu には、探しているものを見つけやすくしたり、必要なデータを絞り込んだりするのに便利なテーブルを操作するためのコマンドがたくさん用意されています。</p><p>まずはじめに、今回利用するテーブルを確認しましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ls
+───┬───────────────┬──────┬─────────┬────────────
+ # │ name          │ type │ size    │ modified
+───┼───────────────┼──────┼─────────┼────────────
+ 0 │ files.rs      │ File │  4.6 KB │ 5 days ago
+ 1 │ lib.rs        │ File │   330 B │ 5 days ago
+ 2 │ lite_parse.rs │ File │  6.3 KB │ 5 days ago
+ 3 │ parse.rs      │ File │ 49.8 KB │ 1 day ago
+ 4 │ path.rs       │ File │  2.1 KB │ 5 days ago
+ 5 │ shapes.rs     │ File │  4.7 KB │ 5 days ago
+ 6 │ signature.rs  │ File │  1.2 KB │ 5 days ago
+───┴───────────────┴──────┴─────────┴────────────
+</code></pre></div><h2 id="データのソート" tabindex="-1"><a class="header-anchor" href="#データのソート" aria-hidden="true">#</a> データのソート</h2><p>ソートに利用する列名を指定して、<code>sort-by</code>コマンドを呼びだすことでテーブルをソートできます。ファイルのサイズでテーブルをソートしたいとしましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ls | sort-by size
+───┬───────────────┬──────┬─────────┬────────────
+ # │ name          │ type │ size    │ modified
+───┼───────────────┼──────┼─────────┼────────────
+ 0 │ lib.rs        │ File │   330 B │ 5 days ago
+ 1 │ signature.rs  │ File │  1.2 KB │ 5 days ago
+ 2 │ path.rs       │ File │  2.1 KB │ 5 days ago
+ 3 │ files.rs      │ File │  4.6 KB │ 5 days ago
+ 4 │ shapes.rs     │ File │  4.7 KB │ 5 days ago
+ 5 │ lite_parse.rs │ File │  6.3 KB │ 5 days ago
+ 6 │ parse.rs      │ File │ 49.8 KB │ 1 day ago
+───┴───────────────┴──────┴─────────┴────────────
+</code></pre></div><p>比較さえできれば任意の列でソートが行なえます。例えば、&quot;name&quot;、&quot;accessed&quot;、または&quot;modified&quot;列でソートすることができます。</p><h2 id="必要なデータを選択する" tabindex="-1"><a class="header-anchor" href="#必要なデータを選択する" aria-hidden="true">#</a> 必要なデータを選択する</h2><p>列や行を選択することでテーブルから必要なデータを選択できます。テーブルからいくつかの列を選択してみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ls | select name size
+───┬───────────────┬─────────
+ # │ name          │ size
+───┼───────────────┼─────────
+ 0 │ files.rs      │  4.6 KB
+ 1 │ lib.rs        │   330 B
+ 2 │ lite_parse.rs │  6.3 KB
+ 3 │ parse.rs      │ 49.8 KB
+ 4 │ path.rs       │  2.1 KB
+ 5 │ shapes.rs     │  4.7 KB
+ 6 │ signature.rs  │  1.2 KB
+───┴───────────────┴─────────
+</code></pre></div><p>こうすることで、より必要とするデータにフォーカスしたテーブルを作ることができます。次にディレクトリからもっとも小さい 5 つのファイルを表示してみます。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ls | sort-by size | first 5
+───┬──────────────┬──────┬────────┬────────────
+ # │ name         │ type │ size   │ modified
+───┼──────────────┼──────┼────────┼────────────
+ 0 │ lib.rs       │ File │  330 B │ 5 days ago
+ 1 │ signature.rs │ File │ 1.2 KB │ 5 days ago
+ 2 │ path.rs      │ File │ 2.1 KB │ 5 days ago
+ 3 │ files.rs     │ File │ 4.6 KB │ 5 days ago
+ 4 │ shapes.rs    │ File │ 4.7 KB │ 5 days ago
+───┴──────────────┴──────┴────────┴────────────
+</code></pre></div><p>もっとも小さいファイルを取得するためにまずサイズでソートし、それから<code>first 5</code>を利用してテーブルから最初の 5 行を返しています。</p><p>不要な行を<code>skip</code>することもできます。上記で返された５行のうち最初の２行をスキップしてみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ls | sort-by size | first 5 | skip 2
+───┬───────────┬──────┬────────┬────────────
+ # │ name      │ type │ size   │ modified
+───┼───────────┼──────┼────────┼────────────
+ 0 │ path.rs   │ File │ 2.1 KB │ 5 days ago
+ 1 │ files.rs  │ File │ 4.6 KB │ 5 days ago
+ 2 │ shapes.rs │ File │ 4.7 KB │ 5 days ago
+───┴───────────┴──────┴────────┴────────────
+</code></pre></div><p>関心のある３行に絞り込みました。</p><p>データを選択するための他のコマンドもみてみましょう。テーブルの各行が数字をもつことを疑問に思っているかもしれません。これは単一の行を簡単に指定する方法として機能します。テーブルをファイル名でソートして、<code>nth</code>コマンドを利用して n 行目を選択してみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ls | sort-by name
+───┬───────────────┬──────┬─────────┬────────────
+ # │ name          │ type │ size    │ modified
+───┼───────────────┼──────┼─────────┼────────────
+ 0 │ files.rs      │ File │  4.6 KB │ 5 days ago
+ 1 │ lib.rs        │ File │   330 B │ 5 days ago
+ 2 │ lite_parse.rs │ File │  6.3 KB │ 5 days ago
+ 3 │ parse.rs      │ File │ 49.8 KB │ 1 day ago
+ 4 │ path.rs       │ File │  2.1 KB │ 5 days ago
+ 5 │ shapes.rs     │ File │  4.7 KB │ 5 days ago
+ 6 │ signature.rs  │ File │  1.2 KB │ 5 days ago
+───┴───────────────┴──────┴─────────┴────────────
+
+&gt; ls | sort-by name | nth 5
+──────────┬────────────
+ name     │ shapes.rs
+ type     │ File
+ size     │ 4.7 KB
+ modified │ 5 days ago
+──────────┴────────────
+</code></pre></div><h2 id="テーブルからデータを取得する" tabindex="-1"><a class="header-anchor" href="#テーブルからデータを取得する" aria-hidden="true">#</a> テーブルからデータを取得する</h2><p>これまでは、テーブルを必要なものだけにトリミングする操作を行ってきました。ときには一歩進んで、列全体ではなく、セル自体の値が必要になるかもしれません。たとえば、ファイル名のリストだけを取得したいとしましょう。この場合<code>get</code>コマンドを利用することができます。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ls | get name
+───┬───────────────
+ 0 │ files.rs
+ 1 │ lib.rs
+ 2 │ lite_parse.rs
+ 3 │ parse.rs
+ 4 │ path.rs
+ 5 │ shapes.rs
+ 6 │ signature.rs
+───┴───────────────
+</code></pre></div><p>これで各ファイルの名前が取得できました。</p><p>これはさきほどみた<code>select</code>コマンドと同じにみえるかもしれません、比較のために<code>select</code>コマンドの出力もみておきましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ls | select name
+───┬───────────────
+ # │ name
+───┼───────────────
+ 0 │ files.rs
+ 1 │ lib.rs
+ 2 │ lite_parse.rs
+ 3 │ parse.rs
+ 4 │ path.rs
+ 5 │ shapes.rs
+ 6 │ signature.rs
+───┴───────────────
+</code></pre></div><p>両者は非常に似ています！両者の違いを明確にしておきましょう。</p><ul><li><code>select</code> - 指定された列のみを含む新しいテーブルを作成します</li><li><code>get</code> - 指定された列内の値を返します</li></ul><p>テーブルからこれらを区別する方法の一つは、<code>value</code>列名です。これにより値のリストであることがわかります。</p><p><code>get</code>コマンドは、パスを受け取りテーブル内のより深いデータへアクセスすることができます。これにより.json ファイルにあるような複雑なデータを簡単に操作することができます。</p><h2 id="テーブルのデータを変更する" tabindex="-1"><a class="header-anchor" href="#テーブルのデータを変更する" aria-hidden="true">#</a> テーブルのデータを変更する</h2><p>テーブルからデータを選択することに加えて、テーブルの内容を更新することもできます。新しい列を加えたり、セルの内容を編集したりできるのです。Nu では、その場で編集するのではなく、パイプラインの各コマンドは新しいテーブルを返します。</p><h3 id="新しい列を追加する" tabindex="-1"><a class="header-anchor" href="#新しい列を追加する" aria-hidden="true">#</a> 新しい列を追加する</h3><p><code>add</code>コマンドを使用して、新しい列をテーブルに追加できます。例をみてみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open rustfmt.toml
+─────────┬──────
+ edition │ 2018
+─────────┴──────
+</code></pre></div><p>値が 2021 の&quot;next_edition&quot;列を追加してみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open rustfmt.toml | insert next_edition 2021
+──────────────┬──────
+ edition      │ 2018
+ next_edition │ 2021
+──────────────┴──────
+</code></pre></div><p>元のファイルは変更されていないことに注意してください。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open rustfmt.toml
+─────────┬──────
+ edition │ 2018
+─────────┴──────
+</code></pre></div><p>Nu の変更は永続的な変更ではなく、値自体に作用する関数的な変更です。これにより、結果を書き出す準備ができるまでパイプライン上で様々な種類の作業をおこなうことができます。ここでは、<code>save</code>コマンドを使用して結果を書き出すことができます。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open rustfmt.toml | insert next_edition 2021 | save rustfmt2.toml
+&gt; open rustfmt2.toml
+──────────────┬──────
+ edition      │ 2018
+ next_edition │ 2021
+──────────────┴──────
+</code></pre></div><h3 id="列を更新する" tabindex="-1"><a class="header-anchor" href="#列を更新する" aria-hidden="true">#</a> 列を更新する</h3><p><code>insert</code>コマンドと同様に、<code>update</code>コマンドを利用して列の内容を新しい値に変更することもできます。実際に動作を確認するために同じファイルを開いてみましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open rustfmt.toml
+─────────┬──────
+ edition │ 2018
+─────────┴──────
+</code></pre></div><p>今度は、サポートした次の edition を指定するよう更新しましょう。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open rustfmt.toml | update edition 2021
+─────────┬──────
+ edition │ 2021
+─────────┴──────
+</code></pre></div><h3 id="値を増やす" tabindex="-1"><a class="header-anchor" href="#値を増やす" aria-hidden="true">#</a> 値を増やす</h3><p>数字やバージョンを扱う際に便利なコマンドがもうひとつあります、<code>inc</code>です。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open rustfmt.toml
+─────────┬──────
+ edition │ 2018
+─────────┴──────
+&gt; open rustfmt.toml | inc edition
+─────────┬──────
+ edition │ 2019
+─────────┴──────
+</code></pre></div><p>&quot;edition&quot;の値は数字なので、<code>inc</code>を使って更新することができます。バージョンを扱う際には<code>inc</code>がその真価を発揮します。</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; open Cargo.toml | get package.version
+0.1.3
+&gt; open Cargo.toml | inc package.version --minor | get package.version
+0.2.0
+</code></pre></div><p>バージョンを扱う際には、フラグを利用して、バージョンのインクリメント方法を指定できます。</p><ul><li><strong>--major</strong> - メジャーバージョンをインクリメント (0.1.3 -&gt; 1.0.0)</li><li><strong>--minor</strong> - マイナーバージョンをインクリメント (0.1.3 -&gt; 0.2.0)</li><li><strong>--patch</strong> - パッチバージョンをインクリメント (0.1.3 -&gt; 0.1.4)</li></ul></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/nushell/nushell.github.io/edit/main/ja/book/working_with_tables.md" rel="noopener noreferrer" target="_blank" aria-label="GitHubでこのページを編集する"><!--[--><!--]--> GitHubでこのページを編集する <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!----><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: ibrah1440@gmail.com">Ibraheem Ahmed</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: hustcer@outlook.com">Justin Ma</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: yamaguchi7073xtt@gmail.com">ymgyt</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/ja/book/loading_data.html" class="" aria-label="データの読み込み"><!--[--><!--]--> データの読み込み <!--[--><!--]--></a></span><span class="next"><a href="/ja/book/pipeline.html" class="" aria-label="パイプライン"><!--[--><!--]--> パイプライン <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app-98f88324.js" defer></script>
+  </body>
+</html>

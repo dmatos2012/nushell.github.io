@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="English">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.60">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <meta name="theme-color" content="#3eaf7c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon.png"><title>HTTP | Nushell</title><meta name="description" content="A new type of shell.">
+    <link rel="preload" href="/assets/style-9c9951ef.css" as="style"><link rel="stylesheet" href="/assets/style-9c9951ef.css">
+    <link rel="modulepreload" href="/assets/app-98f88324.js"><link rel="modulepreload" href="/assets/framework-344bb0e4.js"><link rel="modulepreload" href="/assets/http.html-796d360b.js"><link rel="modulepreload" href="/assets/http.html-230fa25e.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">Nushell</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/book/" class="" aria-label="Book"><!--[--><!--]--> Book <!--[--><!--]--></a></div><div class="navbar-item"><a href="/commands/" class="" aria-label="Commands"><!--[--><!--]--> Commands <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="router-link-active" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Changelog"><!--[--><!--]--> Changelog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/cookbook/http.html" class="router-link-active router-link-exact-active router-link-active" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/ja/" class="" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><div id="docsearch-container"></div></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/book/" class="" aria-label="Book"><!--[--><!--]--> Book <!--[--><!--]--></a></div><div class="navbar-item"><a href="/commands/" class="" aria-label="Commands"><!--[--><!--]--> Commands <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="router-link-active" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Changelog"><!--[--><!--]--> Changelog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/cookbook/http.html" class="router-link-active router-link-exact-active router-link-active" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/ja/" class="" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">Cookbook <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/cookbook/" class="router-link-active sidebar-item" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a><!----></li><li><a href="/cookbook/setup.html" class="sidebar-item" aria-label="Setup"><!--[--><!--]--> Setup <!--[--><!--]--></a><!----></li><li><a href="/cookbook/help.html" class="sidebar-item" aria-label="Help"><!--[--><!--]--> Help <!--[--><!--]--></a><!----></li><li><a href="/cookbook/system.html" class="sidebar-item" aria-label="System"><!--[--><!--]--> System <!--[--><!--]--></a><!----></li><li><a href="/cookbook/parsing.html" class="sidebar-item" aria-label="Parsing"><!--[--><!--]--> Parsing <!--[--><!--]--></a><!----></li><li><a href="/cookbook/native_shell_programs.html" class="sidebar-item" aria-label="Native Shell Programs"><!--[--><!--]--> Native Shell Programs <!--[--><!--]--></a><!----></li><li><a href="/cookbook/files.html" class="sidebar-item" aria-label="Files"><!--[--><!--]--> Files <!--[--><!--]--></a><!----></li><li><a href="/cookbook/git.html" class="sidebar-item" aria-label="Git"><!--[--><!--]--> Git <!--[--><!--]--></a><!----></li><li><a href="/cookbook/parsing_git_log.html" class="sidebar-item" aria-label="Parsing Git Log"><!--[--><!--]--> Parsing Git Log <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/cookbook/http.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="HTTP"><!--[--><!--]--> HTTP <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/cookbook/http.html#fetching-json-from-a-url" class="router-link-active router-link-exact-active sidebar-item" aria-label="Fetching JSON from a url"><!--[--><!--]--> Fetching JSON from a url <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/cookbook/http.html#fetch-from-multiple-urls" class="router-link-active router-link-exact-active sidebar-item" aria-label="Fetch from multiple urls"><!--[--><!--]--> Fetch from multiple urls <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/cookbook/direnv.html" class="sidebar-item" aria-label="Direnv"><!--[--><!--]--> Direnv <!--[--><!--]--></a><!----></li><li><a href="/cookbook/misc.html" class="sidebar-item" aria-label="Miscellaneous"><!--[--><!--]--> Miscellaneous <!--[--><!--]--></a><!----></li><li><a href="/cookbook/tables.html" class="sidebar-item" aria-label="Advanced table workflows"><!--[--><!--]--> Advanced table workflows <!--[--><!--]--></a><!----></li><li><a href="/cookbook/polars_v_pandas_v_nushell.html" class="sidebar-item" aria-label="Polars vs Pandas vs Nushell"><!--[--><!--]--> Polars vs Pandas vs Nushell <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="http" tabindex="-1"><a class="header-anchor" href="#http" aria-hidden="true">#</a> HTTP</h1><h3 id="fetching-json-from-a-url" tabindex="-1"><a class="header-anchor" href="#fetching-json-from-a-url" aria-hidden="true">#</a> Fetching JSON from a url</h3><div class="language-bash" data-ext="sh"><pre class="language-bash"><code><span class="token operator">&gt;</span> http get https://jsonplaceholder.typicode.com/posts <span class="token operator">|</span> first <span class="token number">5</span>
+</code></pre></div><p>Output</p><div class="language-text" data-ext="text"><pre class="language-text"><code>━━━┯━━━━━━━━┯━━━━┯━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ # │ userId │ id │ title                                                   │ body
+───┼────────┼────┼─────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────
+ 0 │      1 │  1 │ sunt aut facere repellat provident occaecati excepturi  │ quia et suscipit
+   │        │    │ optio reprehenderit                                     │ suscipit recusandae consequuntur expedita et cum
+   │        │    │                                                         │ reprehenderit molestiae ut ut quas totam
+   │        │    │                                                         │ nostrum rerum est autem sunt rem eveniet architecto
+ 1 │      1 │  2 │ qui est esse                                            │ est rerum tempore vitae
+   │        │    │                                                         │ sequi sint nihil reprehenderit dolor beatae ea dolores
+   │        │    │                                                         │ neque
+   │        │    │                                                         │ fugiat blanditiis voluptate porro vel nihil molestiae ut
+   │        │    │                                                         │ reiciendis
+   │        │    │                                                         │ qui aperiam non debitis possimus qui neque nisi nulla
+ 2 │      1 │  3 │ ea molestias quasi exercitationem repellat qui ipsa sit │ et iusto sed quo iure
+   │        │    │ aut                                                     │ voluptatem occaecati omnis eligendi aut ad
+   │        │    │                                                         │ voluptatem doloribus vel accusantium quis pariatur
+   │        │    │                                                         │ molestiae porro eius odio et labore et velit aut
+ 3 │      1 │  4 │ eum et est occaecati                                    │ ullam et saepe reiciendis voluptatem adipisci
+   │        │    │                                                         │ sit amet autem assumenda provident rerum culpa
+   │        │    │                                                         │ quis hic commodi nesciunt rem tenetur doloremque ipsam
+   │        │    │                                                         │ iure
+   │        │    │                                                         │ quis sunt voluptatem rerum illo velit
+ 4 │      1 │  5 │ nesciunt quas odio                                      │ repudiandae veniam quaerat sunt sed
+   │        │    │                                                         │ alias aut fugiat sit autem sed est
+   │        │    │                                                         │ voluptatem omnis possimus esse voluptatibus quis
+   │        │    │                                                         │ est aut tenetur dolor neque
+━━━┷━━━━━━━━┷━━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</code></pre></div><hr><h3 id="fetch-from-multiple-urls" tabindex="-1"><a class="header-anchor" href="#fetch-from-multiple-urls" aria-hidden="true">#</a> Fetch from multiple urls</h3><p>Suppose you are querying several endpoints, perhaps with different query parameters and you want to view all the responses as a single dataset. You can make use of <code>$it</code> to run nu commands on every row of data.</p><p>An example JSON file, <code>urls.json</code>, with the following contents:</p><div class="language-json" data-ext="json"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;urls&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;https://jsonplaceholder.typicode.com/posts/1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;https://jsonplaceholder.typicode.com/posts/2&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;https://jsonplaceholder.typicode.com/posts/3&quot;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-bash" data-ext="sh"><pre class="language-bash"><code><span class="token operator">&gt;</span> <span class="token function">open</span> urls.json <span class="token operator">|</span> get urls <span class="token operator">|</span> each <span class="token punctuation">{</span> <span class="token operator">|</span>u<span class="token operator">|</span> http get <span class="token variable">$u</span> <span class="token punctuation">}</span>
+</code></pre></div><p>Output</p><div class="language-text" data-ext="text"><pre class="language-text"><code>━━━┯━━━━━━━━┯━━━━┯━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ # │ userId │ id │ title                                                   │ body
+───┼────────┼────┼─────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────
+ 0 │      1 │  1 │ sunt aut facere repellat provident occaecati excepturi  │ quia et suscipit
+   │        │    │ optio reprehenderit                                     │ suscipit recusandae consequuntur expedita et cum
+   │        │    │                                                         │ reprehenderit molestiae ut ut quas totam
+   │        │    │                                                         │ nostrum rerum est autem sunt rem eveniet architecto
+ 1 │      1 │  2 │ qui est esse                                            │ est rerum tempore vitae
+   │        │    │                                                         │ sequi sint nihil reprehenderit dolor beatae ea dolores
+   │        │    │                                                         │ neque
+   │        │    │                                                         │ fugiat blanditiis voluptate porro vel nihil molestiae ut
+   │        │    │                                                         │ reiciendis
+   │        │    │                                                         │ qui aperiam non debitis possimus qui neque nisi nulla
+ 2 │      1 │  3 │ ea molestias quasi exercitationem repellat qui ipsa sit │ et iusto sed quo iure
+   │        │    │ aut                                                     │ voluptatem occaecati omnis eligendi aut ad
+   │        │    │                                                         │ voluptatem doloribus vel accusantium quis pariatur
+   │        │    │                                                         │ molestiae porro eius odio et labore et velit aut
+━━━┷━━━━━━━━┷━━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</code></pre></div><hr><p>If you specify the <code>--raw</code> flag, you&#39;ll see 3 separate json objects, one in each row.</p><div class="language-bash" data-ext="sh"><pre class="language-bash"><code><span class="token operator">&gt;</span> <span class="token function">open</span> urls.json <span class="token operator">|</span> get urls <span class="token operator">|</span> each <span class="token punctuation">{</span> <span class="token operator">|</span>u<span class="token operator">|</span> http get <span class="token variable">$u</span> <span class="token parameter variable">-r</span> <span class="token punctuation">}</span>
+</code></pre></div><p>Output</p><div class="language-text" data-ext="text"><pre class="language-text"><code>━━━┯━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ # │ &lt;value&gt;
+───┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 0 │ {
+   │   &quot;userId&quot;: 1,
+   │   &quot;id&quot;: 1,
+   │   &quot;title&quot;: &quot;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&quot;,
+   │   &quot;body&quot;: &quot;quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum
+   │ rerum est autem sunt rem eveniet architecto&quot;
+   │ }
+ 1 │ {
+   │   &quot;userId&quot;: 1,
+   │   &quot;id&quot;: 2,
+   │   &quot;title&quot;: &quot;qui est esse&quot;,
+   │   &quot;body&quot;: &quot;est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro
+   │ vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla&quot;
+   │ }
+ 2 │ {
+   │   &quot;userId&quot;: 1,
+   │   &quot;id&quot;: 3,
+   │   &quot;title&quot;: &quot;ea molestias quasi exercitationem repellat qui ipsa sit aut&quot;,
+   │   &quot;body&quot;: &quot;et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis
+   │ pariatur\nmolestiae porro eius odio et labore et velit aut&quot;
+   │ }
+━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</code></pre></div><hr><p>To combine these responses together into a valid JSON array, you can turn the table into json.</p><div class="language-bash" data-ext="sh"><pre class="language-bash"><code><span class="token operator">&gt;</span> <span class="token function">open</span> urls.json <span class="token operator">|</span> get urls <span class="token operator">|</span> each <span class="token punctuation">{</span> <span class="token operator">|</span>u<span class="token operator">|</span> http get <span class="token variable">$u</span> <span class="token punctuation">}</span> <span class="token operator">|</span> to json
+</code></pre></div><p>Output</p><div class="language-json" data-ext="json"><pre class="language-json"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;userId&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;body&quot;</span><span class="token operator">:</span> <span class="token string">&quot;quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;userId&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;qui est esse&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;body&quot;</span><span class="token operator">:</span> <span class="token string">&quot;est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">&quot;userId&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ea molestias quasi exercitationem repellat qui ipsa sit aut&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;body&quot;</span><span class="token operator">:</span> <span class="token string">&quot;et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div><hr><p>Making a <code>post</code> request to an endpoint with a JSON payload. To make long requests easier, you can organize your json payloads inside a file.</p><div class="language-json" data-ext="json"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;my_payload&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;foo&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;body&quot;</span><span class="token operator">:</span> <span class="token string">&quot;bar&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;userId&quot;</span><span class="token operator">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-bash" data-ext="sh"><pre class="language-bash"><code><span class="token operator">&gt;</span> <span class="token function">open</span> payload.json <span class="token operator">|</span> get my_payload <span class="token operator">|</span> to json <span class="token operator">|</span> post https://jsonplaceholder.typicode.com/posts <span class="token variable">$in</span>
+</code></pre></div><p>Output</p><div class="language-text" data-ext="text"><pre class="language-text"><code>━━━━━
+ id
+─────
+ 101
+━━━━━
+</code></pre></div><hr><p>We can put this all together into a pipeline where we read data, manipulate it, and then send it back to the API. Lets <code>fetch</code> a post, <code>increment</code> the id, and <code>post</code> it back to the endpoint. In this particular example, the test endpoint gives back an arbitrary response which we can&#39;t actually mutate.</p><div class="language-bash" data-ext="sh"><pre class="language-bash"><code><span class="token operator">&gt;</span> <span class="token function">open</span> urls.json <span class="token operator">|</span> get urls <span class="token operator">|</span> first <span class="token operator">|</span> http get <span class="token variable">$in</span> <span class="token operator">|</span> upsert <span class="token function">id</span> <span class="token punctuation">{</span><span class="token operator">|</span>item<span class="token operator">|</span> <span class="token variable">$item</span>.id <span class="token operator">|</span> inc<span class="token punctuation">}</span> <span class="token operator">|</span> to json <span class="token operator">|</span> post https://jsonplaceholder.typicode.com/posts <span class="token variable">$in</span>
+</code></pre></div><div class="language-text" data-ext="text"><pre class="language-text"><code>━━━━━
+ id
+─────
+ 101
+━━━━━
+</code></pre></div></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/nushell/nushell.github.io/edit/main/cookbook/http.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page on GitHub"><!--[--><!--]--> Edit this page on GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!----><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: 343840+fdncred@users.noreply.github.com">Darren Schroeder</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: jabos123@gmail.com">Filip Andersson</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: ibrah1440@gmail.com">Ibraheem Ahmed</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/cookbook/parsing_git_log.html" class="" aria-label="Parsing Git Log"><!--[--><!--]--> Parsing Git Log <!--[--><!--]--></a></span><span class="next"><a href="/cookbook/direnv.html" class="" aria-label="Direnv"><!--[--><!--]--> Direnv <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app-98f88324.js" defer></script>
+  </body>
+</html>

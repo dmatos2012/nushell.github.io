@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="English">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.60">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <meta name="theme-color" content="#3eaf7c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon.png"><title>Advanced table workflows | Nushell</title><meta name="description" content="A new type of shell.">
+    <link rel="preload" href="/assets/style-9c9951ef.css" as="style"><link rel="stylesheet" href="/assets/style-9c9951ef.css">
+    <link rel="modulepreload" href="/assets/app-98f88324.js"><link rel="modulepreload" href="/assets/framework-344bb0e4.js"><link rel="modulepreload" href="/assets/tables.html-8e07ce28.js"><link rel="modulepreload" href="/assets/tables.html-3edbc368.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">Nushell</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/book/" class="" aria-label="Book"><!--[--><!--]--> Book <!--[--><!--]--></a></div><div class="navbar-item"><a href="/commands/" class="" aria-label="Commands"><!--[--><!--]--> Commands <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="router-link-active" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Changelog"><!--[--><!--]--> Changelog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/cookbook/tables.html" class="router-link-active router-link-exact-active router-link-active" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/ja/" class="" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><div id="docsearch-container"></div></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/book/" class="" aria-label="Book"><!--[--><!--]--> Book <!--[--><!--]--></a></div><div class="navbar-item"><a href="/commands/" class="" aria-label="Commands"><!--[--><!--]--> Commands <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="router-link-active" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Changelog"><!--[--><!--]--> Changelog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/cookbook/tables.html" class="router-link-active router-link-exact-active router-link-active" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/ja/" class="" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">Cookbook <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/cookbook/" class="router-link-active sidebar-item" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a><!----></li><li><a href="/cookbook/setup.html" class="sidebar-item" aria-label="Setup"><!--[--><!--]--> Setup <!--[--><!--]--></a><!----></li><li><a href="/cookbook/help.html" class="sidebar-item" aria-label="Help"><!--[--><!--]--> Help <!--[--><!--]--></a><!----></li><li><a href="/cookbook/system.html" class="sidebar-item" aria-label="System"><!--[--><!--]--> System <!--[--><!--]--></a><!----></li><li><a href="/cookbook/parsing.html" class="sidebar-item" aria-label="Parsing"><!--[--><!--]--> Parsing <!--[--><!--]--></a><!----></li><li><a href="/cookbook/native_shell_programs.html" class="sidebar-item" aria-label="Native Shell Programs"><!--[--><!--]--> Native Shell Programs <!--[--><!--]--></a><!----></li><li><a href="/cookbook/files.html" class="sidebar-item" aria-label="Files"><!--[--><!--]--> Files <!--[--><!--]--></a><!----></li><li><a href="/cookbook/git.html" class="sidebar-item" aria-label="Git"><!--[--><!--]--> Git <!--[--><!--]--></a><!----></li><li><a href="/cookbook/parsing_git_log.html" class="sidebar-item" aria-label="Parsing Git Log"><!--[--><!--]--> Parsing Git Log <!--[--><!--]--></a><!----></li><li><a href="/cookbook/http.html" class="sidebar-item" aria-label="HTTP"><!--[--><!--]--> HTTP <!--[--><!--]--></a><!----></li><li><a href="/cookbook/direnv.html" class="sidebar-item" aria-label="Direnv"><!--[--><!--]--> Direnv <!--[--><!--]--></a><!----></li><li><a href="/cookbook/misc.html" class="sidebar-item" aria-label="Miscellaneous"><!--[--><!--]--> Miscellaneous <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/cookbook/tables.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="Advanced table workflows"><!--[--><!--]--> Advanced table workflows <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/cookbook/tables.html#merging-tables-of-different-size" class="router-link-active router-link-exact-active sidebar-item" aria-label="Merging tables of different size"><!--[--><!--]--> Merging tables of different size <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/cookbook/polars_v_pandas_v_nushell.html" class="sidebar-item" aria-label="Polars vs Pandas vs Nushell"><!--[--><!--]--> Polars vs Pandas vs Nushell <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="advanced-table-workflows" tabindex="-1"><a class="header-anchor" href="#advanced-table-workflows" aria-hidden="true">#</a> Advanced table workflows</h1><h3 id="merging-tables-of-different-size" tabindex="-1"><a class="header-anchor" href="#merging-tables-of-different-size" aria-hidden="true">#</a> Merging tables of different size</h3><p>Examples shown in <a href="/book/working_with_tables.html" class=""><code>Working with tables</code></a> work fine when our tables have equal amount of rows but what if we want to merge tables of different sizes?</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; let first = [[a b]; [1 2] [3 4]]
+&gt; let second = [[c d]; [5 6]]
+&gt; $first | merge { $second }
+───┬───┬───┬───┬───
+ # │ a │ b │ c │ d
+───┼───┼───┼───┼───
+ 0 │ 1 │ 2 │ 5 │ 6
+───┼───┼───┼───┼───
+ 1 │ 3 │ 4 │ ❎│ ❎
+───┴───┴───┴───┴───
+</code></pre></div><p>Second row in columns <code>c</code> and <code>d</code> is empty because our <code>second</code> table only contained a single row so nushell has nothing to fill the remaining rows with. But what if we wanted the smaller table to &#39;wrap around&#39; and keep filling the rows? For that we can use the <a href="/commands/docs/group.html" class=""><code>group</code></a> command to split the larger table into subtables, merge each of them with the smaller table and then combine the merged tables together using <a href="/commands/docs/flatten.html" class=""><code>flatten</code></a> command like this:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; let first = [[a b]; [1 2] [3 4]]
+&gt; let second = [[c d]; [3 4]]
+&gt; $first | group ($second | length)
+  | each {|it|
+    merge {$second}
+  } | flatten
+───┬───┬───┬───┬───
+ # │ a │ b │ c │ d
+───┼───┼───┼───┼───
+ 0 │ 1 │ 2 │ 5 │ 6
+───┼───┼───┼───┼───
+ 1 │ 3 │ 4 │ 5 │ 6
+───┴───┴───┴───┴───
+</code></pre></div><p>Can we do that with more than two tables? Sure we can! Let&#39;s add a third table:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; let third = [[e f]; [7 8]]
+</code></pre></div><p>We could join all three tables like this:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; $first | group ($second|length)
+   | each {|it|
+     merge { $second  }
+   }
+   | flatten
+   | group ($third | length)
+   | each {|it|
+     merge { $third }
+   }
+   | flatten
+───┬───┬───┬───┬───┬───┬───
+ # │ a │ b │ c │ d │ e │ f
+───┼───┼───┼───┼───┼───┼───
+ 0 │ 1 │ 2 │ 5 │ 6 │ 7 │ 8
+───┼───┼───┼───┼───┼───┼───
+ 1 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8
+───┴───┴───┴───┴───┴───┴───
+</code></pre></div><p>Or just like last time we could use the <a href="/book/docs/reduce.html" class=""><code>reduce</code></a> command to merge tables together recursively:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; [$first_table $second_table $third_table]|reduce {|it, acc|
+    $acc
+    | group ($it | length)
+    | each {|x|
+        merge {$it}
+    }
+    | flatten
+}
+───┬───┬───┬───┬───┬───┬───
+ # │ a │ b │ c │ d │ e │ f
+───┼───┼───┼───┼───┼───┼───
+ 0 │ 1 │ 2 │ 5 │ 6 │ 7 │ 8
+───┼───┼───┼───┼───┼───┼───
+ 1 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8
+───┴───┴───┴───┴───┴───┴───
+</code></pre></div></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/nushell/nushell.github.io/edit/main/cookbook/tables.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page on GitHub"><!--[--><!--]--> Edit this page on GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!----><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: 30049909+Hofer-Julian@users.noreply.github.com">Hofer-Julian</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: 26117918+Yethal@users.noreply.github.com">Yethal</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/cookbook/misc.html" class="" aria-label="Miscellaneous"><!--[--><!--]--> Miscellaneous <!--[--><!--]--></a></span><span class="next"><a href="/cookbook/polars_v_pandas_v_nushell.html" class="" aria-label="Polars vs Pandas vs Nushell"><!--[--><!--]--> Polars vs Pandas vs Nushell <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app-98f88324.js" defer></script>
+  </body>
+</html>
